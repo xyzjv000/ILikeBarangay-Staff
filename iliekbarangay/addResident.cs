@@ -176,25 +176,33 @@ namespace iliekbarangay
                             Connection con = new Connection();
                             con.Connect();
                             SqlCommand cmd = new SqlCommand();
+                            SqlCommand cmdP = new SqlCommand();
+                            SqlCommand cmdF = new SqlCommand();
+                            SqlCommand cmdFP = new SqlCommand();
                             SqlCommand scmd = new SqlCommand();
                             cmd.CommandText = "INSERT INTO resident(RESIDENT_FNAME,RESIDENT_MNAME,RESIDENT_LNAME,RESIDENT_CNUM,RESIDENT_DOB,RESIDENT_CIVIL_REGESTERED,RESIDENT_MARITAL,RESIDENT_POSITION,RESIDENT_FAMILY_HEAD,RESIDENT_GENDER,RESIDENT_EDUC_STATUS,RESIDENT_EDUC_LVL,RESIDENT_EDUC_GRADE,RESIDENT_SPECIALSKILL,RESIDENT_SOURCE_OF_FUND,RESIDENT_JOB_TYPE,RESIDENT_INCOME,RESIDENT_HEALTH_PROBLEM,RESIDENT_HEALTH_STATUS,RESIDENT_VACCINE,RESIDENT_IMAGE,RESIDENT_FINGERPRINT,STAFF_ID,FAMILY_ID) " +
                                 "VALUES(@fname,@mname,@lname,@cnum,@dob,@civilReg,@marital,@position,@head,@gender,@eduStatus,@eduLevel,@gradeLevel,@skill,@sof,@job,@income,@healthProb,@healthStat,@vaccine,@pic,@finger,@sid,@fid)";
+                            
+
+                            cmdP.CommandText = "INSERT INTO resident(RESIDENT_FNAME,RESIDENT_MNAME,RESIDENT_LNAME,RESIDENT_CNUM,RESIDENT_DOB,RESIDENT_CIVIL_REGESTERED,RESIDENT_MARITAL,RESIDENT_POSITION,RESIDENT_FAMILY_HEAD,RESIDENT_GENDER,RESIDENT_EDUC_STATUS,RESIDENT_EDUC_LVL,RESIDENT_EDUC_GRADE,RESIDENT_SPECIALSKILL,RESIDENT_SOURCE_OF_FUND,RESIDENT_JOB_TYPE,RESIDENT_INCOME,RESIDENT_HEALTH_PROBLEM,RESIDENT_HEALTH_STATUS,RESIDENT_VACCINE,RESIDENT_FINGERPRINT,STAFF_ID,FAMILY_ID) " +
+                                "VALUES(@fname,@mname,@lname,@cnum,@dob,@civilReg,@marital,@position,@head,@gender,@eduStatus,@eduLevel,@gradeLevel,@skill,@sof,@job,@income,@healthProb,@healthStat,@vaccine,@finger,@sid,@fid)";
+
+                            cmdF.CommandText = "INSERT INTO resident(RESIDENT_FNAME,RESIDENT_MNAME,RESIDENT_LNAME,RESIDENT_CNUM,RESIDENT_DOB,RESIDENT_CIVIL_REGESTERED,RESIDENT_MARITAL,RESIDENT_POSITION,RESIDENT_FAMILY_HEAD,RESIDENT_GENDER,RESIDENT_EDUC_STATUS,RESIDENT_EDUC_LVL,RESIDENT_EDUC_GRADE,RESIDENT_SPECIALSKILL,RESIDENT_SOURCE_OF_FUND,RESIDENT_JOB_TYPE,RESIDENT_INCOME,RESIDENT_HEALTH_PROBLEM,RESIDENT_HEALTH_STATUS,RESIDENT_VACCINE,RESIDENT_IMAGE,STAFF_ID,FAMILY_ID) " +
+                                "VALUES(@fname,@mname,@lname,@cnum,@dob,@civilReg,@marital,@position,@head,@gender,@eduStatus,@eduLevel,@gradeLevel,@skill,@sof,@job,@income,@healthProb,@healthStat,@vaccine,@pic,@sid,@fid)";
+
+                            cmdFP.CommandText = "INSERT INTO resident(RESIDENT_FNAME,RESIDENT_MNAME,RESIDENT_LNAME,RESIDENT_CNUM,RESIDENT_DOB,RESIDENT_CIVIL_REGESTERED,RESIDENT_MARITAL,RESIDENT_POSITION,RESIDENT_FAMILY_HEAD,RESIDENT_GENDER,RESIDENT_EDUC_STATUS,RESIDENT_EDUC_LVL,RESIDENT_EDUC_GRADE,RESIDENT_SPECIALSKILL,RESIDENT_SOURCE_OF_FUND,RESIDENT_JOB_TYPE,RESIDENT_INCOME,RESIDENT_HEALTH_PROBLEM,RESIDENT_HEALTH_STATUS,RESIDENT_VACCINE,STAFF_ID,FAMILY_ID) " +
+                                "VALUES(@fname,@mname,@lname,@cnum,@dob,@civilReg,@marital,@position,@head,@gender,@eduStatus,@eduLevel,@gradeLevel,@skill,@sof,@job,@income,@healthProb,@healthStat,@vaccine,@sid,@fid)";
+
                             scmd.CommandText = "update resident set resident_age = datediff(YY, resident_dob,GETDATE())";
                             cmd.Connection = Connection.con;
+                            cmdP.Connection = Connection.con;
+                            cmdF.Connection = Connection.con;
+                            cmdFP.Connection = Connection.con;
                             scmd.Connection = Connection.con;
 
 
-                            if (res_Image.Image == null)
-                            {
-                                MessageBox.Show("Please take a photo");
-
-                            }
-                            else if (fingerPrint1.Image == null)
-                            {
-                                MessageBox.Show("Please scan your fingerprint!");
-
-                            }
-                            else if (cnum.Text.Length < 11 || cnum.Text.Length > 11)
+                           
+                            if (cnum.Text.Length > 11)
                             {
                                 MessageBox.Show("Check your Contact Number!");
                                 cnum.Focus();
@@ -203,6 +211,10 @@ namespace iliekbarangay
                             {
                                 MessageBox.Show("Initials should be 1 character!");
                                 mi.Focus();
+                            }
+                            else if (DOB.Value >= DateTime.Now.AddYears(-2))
+                            {
+                                MessageBox.Show("System is available only for 3 years old and above!");
                             }
                             else if (healthStatus.CheckedItems.Count >= 2)
                             {
@@ -214,96 +226,320 @@ namespace iliekbarangay
                                 MessageBox.Show("Only choose 5 health problems!");
                                 healthProblems.Focus();
                             }
+                            else if (fingerPrint1.Image == null && res_Image.Image == null)
+                            {
+                                try
+                                {
+
+                                    //MemoryStream stream = new MemoryStream();
+                                    //fingerprint.Position = (0);
+                                    //res_Image.Image = resizeImage(res_Image.Image, new Size(177, 151));
+                                    //res_Image.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                    //byte[] pic = stream.ToArray();
+                                    cmdFP.Parameters.AddWithValue("@fname", fname.Text);
+                                    cmdFP.Parameters.AddWithValue("@mname", mi.Text);
+                                    cmdFP.Parameters.AddWithValue("@lname", lname.Text);
+                                    cmdFP.Parameters.AddWithValue("@cnum", cnum.Text);
+                                    cmdFP.Parameters.AddWithValue("@dob", DOB.Value);
+                                    cmdFP.Parameters.AddWithValue("@gender", gender.Text);
+                                    cmdFP.Parameters.AddWithValue("@civilReg", civilRegStat.Text);
+                                    cmdFP.Parameters.AddWithValue("@marital", maritalStatus.Text);
+                                    cmdFP.Parameters.AddWithValue("@position", familyPos.Text);
+                                    cmdFP.Parameters.AddWithValue("@head", familyHead.Text);
+                                    cmdFP.Parameters.AddWithValue("@eduStatus", eduStat.Text);
+                                    cmdFP.Parameters.AddWithValue("@eduLevel", eduLvl.Text);
+                                    cmdFP.Parameters.AddWithValue("@gradeLevel", YrLvl.Text);
+                                    cmdFP.Parameters.AddWithValue("@skill", skill.Text);
+                                    cmdFP.Parameters.AddWithValue("@income", monthlyIncome.Text);
+                                    cmdFP.Parameters.AddWithValue("@sof", sourceOfFund.Text);
+                                    cmdFP.Parameters.AddWithValue("@job", jobType.Text);
+                                    cmdFP.Parameters.AddWithValue("@healthProb", healthProb);
+                                    cmdFP.Parameters.AddWithValue("@healthStat", healthStat);
+                                    cmdFP.Parameters.AddWithValue("@vaccine", vaccine);
+                                    //cmd.Parameters.AddWithValue("@finger", bytes);
+                                    //cmd.Parameters.AddWithValue("@pic", pic);
+                                    cmdFP.Parameters.AddWithValue("@sid", ID);
+                                    cmdFP.Parameters.AddWithValue("@fid", FID);
+                                    cmdFP.ExecuteNonQuery();
+                                    scmd.ExecuteNonQuery();
+                                    MessageBox.Show("Resident Added Successfully");
+
+                                    FMPIclear();
+                                    myCamera.Stop();
+                                    res_Image.Image = null;
+                                    fingerPrint1.Image = null;
+
+                                    Reset();
+                                    this.Controls.Clear();
+                                    tab_residents tr = new tab_residents();
+                                    this.Controls.Add(tr);
+                                    // tr.ID = this.ID.Trim();
+                                    tr.ID = ID.Trim();
+
+                                    tr.Dock = DockStyle.Fill;
+                                    tr.Show();
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message + ex.ToString());
+                                    Reset();
+                                }
+                            }
+                            else if (res_Image.Image == null)
+                            {
+                                if (prompts.Text != "Done.")
+                                {
+                                    MessageBox.Show("Unclear Fingerprint Captured!");
+                                    Reset();
+                                }
+                                else
+                                {
+                                    UpdateStatus();
+                                    switch (Enroller.TemplateStatus)
+                                    {
+                                        case DPFP.Processing.Enrollment.Status.Ready:   // report success and stop capturing
+                                            {
+                                                MemoryStream fingerprint = new MemoryStream();
+                                                Enroller.Template.Serialize(fingerprint);
+                                                fingerprint.Position = 0;
+                                                BinaryReader br = new BinaryReader(fingerprint);
+                                                byte[] bytes = br.ReadBytes((Int32)fingerprint.Length);
+
+                                                try
+                                                {
+
+                                                    //MemoryStream stream = new MemoryStream();
+                                                    //fingerprint.Position = (0);
+                                                    //res_Image.Image = resizeImage(res_Image.Image, new Size(177, 151));
+                                                    //res_Image.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                                    //byte[] pic = stream.ToArray();
+                                                    cmdP.Parameters.AddWithValue("@fname", fname.Text);
+                                                    cmdP.Parameters.AddWithValue("@mname", mi.Text);
+                                                    cmdP.Parameters.AddWithValue("@lname", lname.Text);
+                                                    cmdP.Parameters.AddWithValue("@cnum", cnum.Text);
+                                                    cmdP.Parameters.AddWithValue("@dob", DOB.Value);
+                                                    cmdP.Parameters.AddWithValue("@gender", gender.Text);
+                                                    cmdP.Parameters.AddWithValue("@civilReg", civilRegStat.Text);
+                                                    cmdP.Parameters.AddWithValue("@marital", maritalStatus.Text);
+                                                    cmdP.Parameters.AddWithValue("@position", familyPos.Text);
+                                                    cmdP.Parameters.AddWithValue("@head", familyHead.Text);
+                                                    cmdP.Parameters.AddWithValue("@eduStatus", eduStat.Text);
+                                                    cmdP.Parameters.AddWithValue("@eduLevel", eduLvl.Text);
+                                                    cmdP.Parameters.AddWithValue("@gradeLevel", YrLvl.Text);
+                                                    cmdP.Parameters.AddWithValue("@skill", skill.Text);
+                                                    cmdP.Parameters.AddWithValue("@income", monthlyIncome.Text);
+                                                    cmdP.Parameters.AddWithValue("@sof", sourceOfFund.Text);
+                                                    cmdP.Parameters.AddWithValue("@job", jobType.Text);
+                                                    cmdP.Parameters.AddWithValue("@healthProb", healthProb);
+                                                    cmdP.Parameters.AddWithValue("@healthStat", healthStat);
+                                                    cmdP.Parameters.AddWithValue("@vaccine", vaccine);
+                                                    cmdP.Parameters.AddWithValue("@finger", bytes);
+                                                    //cmdP.Parameters.AddWithValue("@pic", pic);
+                                                    cmdP.Parameters.AddWithValue("@sid", ID);
+                                                    cmdP.Parameters.AddWithValue("@fid", FID);
+                                                    cmdP.ExecuteNonQuery();
+                                                    scmd.ExecuteNonQuery();
+                                                    MessageBox.Show("Resident Added Successfully");
+
+                                                    FMPIclear();
+                                                    myCamera.Stop();
+                                                    res_Image.Image = null;
+                                                    fingerPrint1.Image = null;
+
+                                                    Reset();
+                                                    this.Controls.Clear();
+                                                    tab_residents tr = new tab_residents();
+                                                    this.Controls.Add(tr);
+                                                    // tr.ID = this.ID.Trim();
+                                                    tr.ID = ID.Trim();
+
+                                                    tr.Dock = DockStyle.Fill;
+                                                    tr.Show();
+
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    MessageBox.Show(ex.Message + ex.ToString());
+                                                    Reset();
+                                                }
+                                                break;
+                                            }
+
+                                        case DPFP.Processing.Enrollment.Status.Failed:  // report failure and restart capturing
+                                            {
+                                                Enroller.Clear();
+                                                cp.StopCapture();
+                                                UpdateStatus();
+                                                OnTemplate(null);
+                                                cp.StartCapture();
+                                                break;
+                                            }
+                                    }
+                                }
+
+
+                            }
+                            else if (fingerPrint1.Image == null)
+                            {
+                                try
+                                {
+
+                                    MemoryStream stream = new MemoryStream();
+                                    //fingerprint.Position = (0);
+                                    res_Image.Image = resizeImage(res_Image.Image, new Size(177, 151));
+                                    res_Image.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                    byte[] pic = stream.ToArray();
+                                    cmdF.Parameters.AddWithValue("@fname", fname.Text);
+                                    cmdF.Parameters.AddWithValue("@mname", mi.Text);
+                                    cmdF.Parameters.AddWithValue("@lname", lname.Text);
+                                    cmdF.Parameters.AddWithValue("@cnum", cnum.Text);
+                                    cmdF.Parameters.AddWithValue("@dob", DOB.Value);
+                                    cmdF.Parameters.AddWithValue("@gender", gender.Text);
+                                    cmdF.Parameters.AddWithValue("@civilReg", civilRegStat.Text);
+                                    cmdF.Parameters.AddWithValue("@marital", maritalStatus.Text);
+                                    cmdF.Parameters.AddWithValue("@position", familyPos.Text);
+                                    cmdF.Parameters.AddWithValue("@head", familyHead.Text);
+                                    cmdF.Parameters.AddWithValue("@eduStatus", eduStat.Text);
+                                    cmdF.Parameters.AddWithValue("@eduLevel", eduLvl.Text);
+                                    cmdF.Parameters.AddWithValue("@gradeLevel", YrLvl.Text);
+                                    cmdF.Parameters.AddWithValue("@skill", skill.Text);
+                                    cmdF.Parameters.AddWithValue("@income", monthlyIncome.Text);
+                                    cmdF.Parameters.AddWithValue("@sof", sourceOfFund.Text);
+                                    cmdF.Parameters.AddWithValue("@job", jobType.Text);
+                                    cmdF.Parameters.AddWithValue("@healthProb", healthProb);
+                                    cmdF.Parameters.AddWithValue("@healthStat", healthStat);
+                                    cmdF.Parameters.AddWithValue("@vaccine", vaccine);
+                                    //cmdF.Parameters.AddWithValue("@finger", bytes);
+                                    cmdF.Parameters.AddWithValue("@pic", pic);
+                                    cmdF.Parameters.AddWithValue("@sid", ID);
+                                    cmdF.Parameters.AddWithValue("@fid", FID);
+                                    cmdF.ExecuteNonQuery();
+                                    scmd.ExecuteNonQuery();
+                                    MessageBox.Show("Resident Added Successfully");
+
+                                    FMPIclear();
+                                    myCamera.Stop();
+                                    res_Image.Image = null;
+                                    fingerPrint1.Image = null;
+
+                                    Reset();
+                                    this.Controls.Clear();
+                                    tab_residents tr = new tab_residents();
+                                    this.Controls.Add(tr);
+                                    // tr.ID = this.ID.Trim();
+                                    tr.ID = ID.Trim();
+
+                                    tr.Dock = DockStyle.Fill;
+                                    tr.Show();
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message + ex.ToString());
+                                    Reset();
+                                }
+                            }
+                          
                             else
                             {
-                                UpdateStatus();
-                                switch (Enroller.TemplateStatus)
+                                if (prompts.Text != "Done.")
                                 {
-                                    case DPFP.Processing.Enrollment.Status.Ready:   // report success and stop capturing
-                                        {
-
-
-                                            //  byte[] btarr = null;
-                                            // Enroller.Template.Serialize(ref btarr);
-                                            MemoryStream fingerprint = new MemoryStream();
-                                            Enroller.Template.Serialize(fingerprint);
-                                            fingerprint.Position = 0;
-                                            BinaryReader br = new BinaryReader(fingerprint);
-                                            byte[] bytes = br.ReadBytes((Int32)fingerprint.Length);
-
-
-
-                                            try
+                                    MessageBox.Show("Unclear Fingerprint Captured!");
+                                    Reset();
+                                }
+                                else
+                                {
+                                    UpdateStatus();
+                                    switch (Enroller.TemplateStatus)
+                                    {
+                                        case DPFP.Processing.Enrollment.Status.Ready:   // report success and stop capturing
                                             {
 
-                                                MemoryStream stream = new MemoryStream();
-                                                fingerprint.Position = (0);
-                                                res_Image.Image = resizeImage(res_Image.Image, new Size(177, 151));
-                                                res_Image.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                                                //fingerPrint1.Image.Save(fingerprint, System.Drawing.Imaging.ImageFormat.Jpeg);
-                                                byte[] pic = stream.ToArray();
-                                                // byte[] fic = br.ReadBytes((Int32)fingerprint.Length);
-                                                cmd.Parameters.AddWithValue("@fname", fname.Text);
-                                                cmd.Parameters.AddWithValue("@mname", mi.Text);
-                                                cmd.Parameters.AddWithValue("@lname", lname.Text);
-                                                cmd.Parameters.AddWithValue("@cnum", cnum.Text);
-                                                cmd.Parameters.AddWithValue("@dob", DOB.Value);
-                                                cmd.Parameters.AddWithValue("@gender", gender.Text);
-                                                cmd.Parameters.AddWithValue("@civilReg", civilRegStat.Text);
-                                                cmd.Parameters.AddWithValue("@marital", maritalStatus.Text);
-                                                cmd.Parameters.AddWithValue("@position", familyPos.Text);
-                                                cmd.Parameters.AddWithValue("@head", familyHead.Text);
-                                                cmd.Parameters.AddWithValue("@eduStatus", eduStat.Text);
-                                                cmd.Parameters.AddWithValue("@eduLevel", eduLvl.Text);
-                                                cmd.Parameters.AddWithValue("@gradeLevel", YrLvl.Text);
-                                                cmd.Parameters.AddWithValue("@skill", skill.Text);
-                                                cmd.Parameters.AddWithValue("@income", monthlyIncome.Text);
-                                                cmd.Parameters.AddWithValue("@sof", sourceOfFund.Text);
-                                                cmd.Parameters.AddWithValue("@job", jobType.Text);
-                                                cmd.Parameters.AddWithValue("@healthProb", healthProb);
-                                                cmd.Parameters.AddWithValue("@healthStat", healthStat);
-                                                cmd.Parameters.AddWithValue("@vaccine", vaccine);
-                                                cmd.Parameters.AddWithValue("@finger", bytes);
-                                                cmd.Parameters.AddWithValue("@pic", pic);
-                                                cmd.Parameters.AddWithValue("@sid", ID);
-                                                cmd.Parameters.AddWithValue("@fid", FID);
-                                                cmd.ExecuteNonQuery();
-                                                scmd.ExecuteNonQuery();
-                                                MessageBox.Show("Resident Added Successfully");
 
-                                                FMPIclear();
-                                                myCamera.Stop();                                                         
-                                                res_Image.Image = null;
-                                                fingerPrint1.Image = null;                                                                  
+                                                //  byte[] btarr = null;
+                                                // Enroller.Template.Serialize(ref btarr);
+                                                MemoryStream fingerprint = new MemoryStream();
+                                                Enroller.Template.Serialize(fingerprint);
+                                                fingerprint.Position = 0;
+                                                BinaryReader br = new BinaryReader(fingerprint);
+                                                byte[] bytes = br.ReadBytes((Int32)fingerprint.Length);
 
-                                                Reset();
-                                                this.Controls.Clear();
-                                                tab_residents tr = new tab_residents();
-                                                this.Controls.Add(tr);
-                                                // tr.ID = this.ID.Trim();
-                                                tr.ID = ID.Trim();
 
-                                                tr.Dock = DockStyle.Fill;
-                                                tr.Show();
 
+                                                try
+                                                {
+
+                                                    MemoryStream stream = new MemoryStream();
+                                                    fingerprint.Position = (0);
+                                                    res_Image.Image = resizeImage(res_Image.Image, new Size(177, 151));
+                                                    res_Image.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                                    //fingerPrint1.Image.Save(fingerprint, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                                    byte[] pic = stream.ToArray();
+                                                    // byte[] fic = br.ReadBytes((Int32)fingerprint.Length);
+                                                    cmd.Parameters.AddWithValue("@fname", fname.Text);
+                                                    cmd.Parameters.AddWithValue("@mname", mi.Text);
+                                                    cmd.Parameters.AddWithValue("@lname", lname.Text);
+                                                    cmd.Parameters.AddWithValue("@cnum", cnum.Text);
+                                                    cmd.Parameters.AddWithValue("@dob", DOB.Value);
+                                                    cmd.Parameters.AddWithValue("@gender", gender.Text);
+                                                    cmd.Parameters.AddWithValue("@civilReg", civilRegStat.Text);
+                                                    cmd.Parameters.AddWithValue("@marital", maritalStatus.Text);
+                                                    cmd.Parameters.AddWithValue("@position", familyPos.Text);
+                                                    cmd.Parameters.AddWithValue("@head", familyHead.Text);
+                                                    cmd.Parameters.AddWithValue("@eduStatus", eduStat.Text);
+                                                    cmd.Parameters.AddWithValue("@eduLevel", eduLvl.Text);
+                                                    cmd.Parameters.AddWithValue("@gradeLevel", YrLvl.Text);
+                                                    cmd.Parameters.AddWithValue("@skill", skill.Text);
+                                                    cmd.Parameters.AddWithValue("@income", monthlyIncome.Text);
+                                                    cmd.Parameters.AddWithValue("@sof", sourceOfFund.Text);
+                                                    cmd.Parameters.AddWithValue("@job", jobType.Text);
+                                                    cmd.Parameters.AddWithValue("@healthProb", healthProb);
+                                                    cmd.Parameters.AddWithValue("@healthStat", healthStat);
+                                                    cmd.Parameters.AddWithValue("@vaccine", vaccine);
+                                                    cmd.Parameters.AddWithValue("@finger", bytes);
+                                                    cmd.Parameters.AddWithValue("@pic", pic);
+                                                    cmd.Parameters.AddWithValue("@sid", ID);
+                                                    cmd.Parameters.AddWithValue("@fid", FID);
+                                                    cmd.ExecuteNonQuery();
+                                                    scmd.ExecuteNonQuery();
+                                                    MessageBox.Show("Resident Added Successfully");
+
+                                                    FMPIclear();
+                                                    myCamera.Stop();
+                                                    res_Image.Image = null;
+                                                    fingerPrint1.Image = null;
+
+                                                    Reset();
+                                                    this.Controls.Clear();
+                                                    tab_residents tr = new tab_residents();
+                                                    this.Controls.Add(tr);
+                                                    // tr.ID = this.ID.Trim();
+                                                    tr.ID = ID.Trim();
+
+                                                    tr.Dock = DockStyle.Fill;
+                                                    tr.Show();
+
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    MessageBox.Show(ex.Message + ex.ToString());
+                                                    Reset();
+                                                }
+                                                break;
                                             }
-                                            catch (Exception ex)
+
+                                        case DPFP.Processing.Enrollment.Status.Failed:  // report failure and restart capturing
                                             {
-                                                MessageBox.Show(ex.Message + ex.ToString());
-                                                Reset();
+                                                Enroller.Clear();
+                                                cp.StopCapture();
+                                                UpdateStatus();
+                                                OnTemplate(null);
+                                                cp.StartCapture();
+                                                break;
                                             }
-                                            break;
-                                        }
+                                    }
 
-                                    case DPFP.Processing.Enrollment.Status.Failed:  // report failure and restart capturing
-                                        {
-                                            Enroller.Clear();
-                                            cp.StopCapture();
-                                            UpdateStatus();
-                                            OnTemplate(null);
-                                            cp.StartCapture();
-                                            break;
-                                        }
                                 }
 
                             }
@@ -339,7 +575,7 @@ namespace iliekbarangay
                 Connection con = new Connection();
                 con.Connect();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = " select resident_fingerprint from resident ";
+                cmd.CommandText = " select resident_fingerprint from resident where resident_fingerprint is not null";
                 cmd.Connection = Connection.con;
                 SqlDataAdapter sd = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

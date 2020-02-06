@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addResident));
             this.addbody = new System.Windows.Forms.Panel();
+            this.identification = new System.Windows.Forms.Label();
             this.FMPI = new System.Windows.Forms.Panel();
             this.prompts = new System.Windows.Forms.Label();
             this.scans = new System.Windows.Forms.Label();
@@ -87,7 +88,6 @@
             this.fingerPrint1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.identification = new System.Windows.Forms.Label();
             this.addbody.SuspendLayout();
             this.FMPI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.res_Image)).BeginInit();
@@ -105,6 +105,16 @@
             this.addbody.Size = new System.Drawing.Size(679, 997);
             this.addbody.TabIndex = 0;
             // 
+            // identification
+            // 
+            this.identification.AutoSize = true;
+            this.identification.Location = new System.Drawing.Point(16, 20);
+            this.identification.Name = "identification";
+            this.identification.Size = new System.Drawing.Size(97, 13);
+            this.identification.TabIndex = 10;
+            this.identification.Text = "ggggggggggggggg";
+            this.identification.Visible = false;
+            // 
             // FMPI
             // 
             this.FMPI.BackColor = System.Drawing.Color.White;
@@ -112,7 +122,6 @@
             this.FMPI.Controls.Add(this.prompts);
             this.FMPI.Controls.Add(this.scans);
             this.FMPI.Controls.Add(this.StatusLine);
-            this.FMPI.Controls.Add(this.openCamera);
             this.FMPI.Controls.Add(this.label30);
             this.FMPI.Controls.Add(this.familyHead);
             this.FMPI.Controls.Add(this.label29);
@@ -146,7 +155,6 @@
             this.FMPI.Controls.Add(this.eduStat);
             this.FMPI.Controls.Add(this.YrLvl);
             this.FMPI.Controls.Add(this.label12);
-            this.FMPI.Controls.Add(this.takePhotoBtn);
             this.FMPI.Controls.Add(this.cnum);
             this.FMPI.Controls.Add(this.civilRegStat);
             this.FMPI.Controls.Add(this.label11);
@@ -162,6 +170,8 @@
             this.FMPI.Controls.Add(this.fname);
             this.FMPI.Controls.Add(this.label5);
             this.FMPI.Controls.Add(this.fingerPrint1);
+            this.FMPI.Controls.Add(this.openCamera);
+            this.FMPI.Controls.Add(this.takePhotoBtn);
             this.FMPI.Location = new System.Drawing.Point(19, 62);
             this.FMPI.Name = "FMPI";
             this.FMPI.Size = new System.Drawing.Size(634, 918);
@@ -1010,16 +1020,6 @@
             this.label1.Size = new System.Drawing.Size(323, 33);
             this.label1.TabIndex = 8;
             this.label1.Text = "Adding Family Member";
-            // 
-            // identification
-            // 
-            this.identification.AutoSize = true;
-            this.identification.Location = new System.Drawing.Point(16, 20);
-            this.identification.Name = "identification";
-            this.identification.Size = new System.Drawing.Size(97, 13);
-            this.identification.TabIndex = 10;
-            this.identification.Text = "ggggggggggggggg";
-            this.identification.Visible = false;
             // 
             // addResident
             // 

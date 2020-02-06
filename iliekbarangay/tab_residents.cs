@@ -62,6 +62,7 @@ namespace iliekbarangay
 
             da.Fill(dt);     
             residentData.DataSource = dt;
+
             SqlDataAdapter fa = new SqlDataAdapter("select FAMILY_NAME AS Family_Name, CONCAT(FAMILY_ZONE ,' ',FAMILY_STREET ,',', FAMILY_BARANGAY) AS Address,FAMILY_HOUSEHOLD_NUM AS Household_Num, FAMILY_DATE_REGISTERED AS Date_Registered, FAMILY_ID from FAMILY", Connection.con);
             SqlCommandBuilder cf = new SqlCommandBuilder(fa);
             DataTable dx = new DataTable();
@@ -135,7 +136,7 @@ namespace iliekbarangay
             {
                 BindingSource bs = new BindingSource();
                 bs.DataSource = familyData.DataSource;
-                bs.Filter = "Family_Name like '%" + searchBox.Text + "%'";
+                bs.Filter = "Family_Name like '%" +                   searchBox.Text + "%'";
                 familyData.DataSource = bs;
             }
            

@@ -177,7 +177,7 @@ namespace iliekbarangay
             answer.Enabled = false;
             question.Enabled = false;
             save.Visible = false;
-            cancelBtn.Visible = false;
+            cancelBtn.Visible = false;           
             Disable();
             DisplayData();
             myCamera.Stop();
@@ -468,11 +468,10 @@ namespace iliekbarangay
 
 
         private void oldPass_OnValueChanged(object sender, EventArgs e)
-        {
-          
+        {          
             SqlCommand cmd4 = new SqlCommand();
             cmd4.Connection = Connection.con;
-            cmd4.CommandText = "select STAFF_PASSWORD from STAFF";              
+            cmd4.CommandText = "select STAFF_PASSWORD from STAFF WHERE STAFF_ID ='" + ID + "'";              
             SqlDataReader dar = cmd4.ExecuteReader();
             
             if (dar.Read())

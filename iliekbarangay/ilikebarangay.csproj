@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ILB_ICON.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge">
       <HintPath>..\Camera Application DLL\AForge.dll</HintPath>
@@ -438,6 +441,7 @@
     <Content Include="bin\Debug\MetroFramework.Fonts.dll" />
     <Content Include="bin\Debug\MySql.Data.dll" />
     <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="ILB_ICON.ico" />
     <Content Include="obj\Debug\iliekbarangay.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Interop.DPFPCtlXLib.dll" />
     <Content Include="obj\Debug\Interop.DPFPDevXLib.dll" />

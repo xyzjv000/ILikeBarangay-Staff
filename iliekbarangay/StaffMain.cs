@@ -73,7 +73,8 @@ namespace iliekbarangay
             announcements.Normalcolor = Color.FromArgb(40, 40, 40);
             residents.Normalcolor = Color.FromArgb(40, 40, 40);
             logout.Normalcolor = Color.FromArgb(6, 119, 186);
-            
+            update.Normalcolor = Color.FromArgb(40, 40, 40);
+
             DialogResult resu = MessageBox.Show("Are you sure you want to logout?", "Logout?", MessageBoxButtons.YesNo);
 
             if (resu == DialogResult.Yes)
@@ -104,6 +105,7 @@ namespace iliekbarangay
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
             announcements.Normalcolor = Color.FromArgb(40, 40, 40);
             residents.Normalcolor = Color.FromArgb(40, 40, 40);
+            update.Normalcolor = Color.FromArgb(40, 40, 40);
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
             globalLabel.Text = "Profile";
             PanelBody.Controls.Clear();
@@ -132,6 +134,7 @@ namespace iliekbarangay
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
             announcements.Normalcolor = Color.FromArgb(6, 119, 186);
             residents.Normalcolor = Color.FromArgb(40, 40, 40);
+            update.Normalcolor = Color.FromArgb(40, 40, 40);
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
             globalLabel.Text = "Announcements";
             PanelBody.Controls.Clear();
@@ -158,6 +161,7 @@ namespace iliekbarangay
             announcements.Normalcolor = Color.FromArgb(40, 40, 40);
             residents.Normalcolor = Color.FromArgb(40, 40, 40);
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
+            update.Normalcolor = Color.FromArgb(40, 40, 40);
             globalLabel.Text = "Programs";
             PanelBody.Controls.Clear();
             if (!PanelBody.Controls.Contains(tab_programs.Instance))
@@ -184,6 +188,7 @@ namespace iliekbarangay
             announcements.Normalcolor = Color.FromArgb(40, 40, 40);
             residents.Normalcolor = Color.FromArgb(6, 119, 186);
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
+            update.Normalcolor = Color.FromArgb(40, 40, 40);
             globalLabel.Text = "Residents";
             PanelBody.Controls.Clear();
             if (!PanelBody.Controls.Contains(tab_residents.Instance))
@@ -211,6 +216,7 @@ namespace iliekbarangay
             announcements.Normalcolor = Color.FromArgb(40, 40, 40);
             residents.Normalcolor = Color.FromArgb(40, 40, 40);
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
+            update.Normalcolor = Color.FromArgb(40, 40, 40);
             globalLabel.Text = "Transactions";
             PanelBody.Controls.Clear();
             if (!PanelBody.Controls.Contains(tab_document.Instance))
@@ -238,6 +244,7 @@ namespace iliekbarangay
             announcements.Normalcolor = Color.FromArgb(40, 40, 40);
             residents.Normalcolor = Color.FromArgb(40, 40, 40);
             logout.Normalcolor = Color.FromArgb(40, 40, 40);
+            update.Normalcolor = Color.FromArgb(40, 40, 40);
             globalLabel.Text = "Dashboard";
             PanelBody.Controls.Clear();
 
@@ -278,6 +285,32 @@ namespace iliekbarangay
         private void minBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            dashboard.Normalcolor = Color.FromArgb(40, 40, 40);
+            profile.Normalcolor = Color.FromArgb(40, 40, 40);
+            transactions.Normalcolor = Color.FromArgb(40, 40, 40);
+            programs.Normalcolor = Color.FromArgb(40, 40, 40);
+            logout.Normalcolor = Color.FromArgb(40, 40, 40);
+            announcements.Normalcolor = Color.FromArgb(40, 40, 40);
+            residents.Normalcolor = Color.FromArgb(40, 40, 40);
+            logout.Normalcolor = Color.FromArgb(40, 40, 40);
+            update.Normalcolor = Color.FromArgb(6, 119, 186);
+            globalLabel.Text = "Update Resident Data";
+            PanelBody.Controls.Clear();
+
+            if (!PanelBody.Controls.Contains(tab_update.Instance))
+            {
+                PanelBody.Controls.Add(tab_update.Instance);
+                tab_update.Instance.Dock = DockStyle.Fill;
+                tab_update.Instance.BringToFront();
+            }
+            else
+            {
+                tab_update.Instance.BringToFront();
+            }
         }
     }
 }

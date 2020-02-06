@@ -117,29 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="certificate of indigency" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\certificate of indigency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Certificate_page_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Certificate_page_12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Certificate_page_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Certificate_page_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Certificate_page_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Certificate_page_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sampleform_page_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sampleform_page_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sampleform_page_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sampleform_page_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fingerprint_150px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fingerprint_150px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profileImage.BackgroundImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\profileImage.BackgroundImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="II.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NAME.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Age.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Civil_Status.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Gender.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="searchBtn.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        RK5CYII=
+</value>
   </data>
 </root>

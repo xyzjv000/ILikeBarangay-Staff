@@ -36,21 +36,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.Label();
             this.uname = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.globalLabel = new System.Windows.Forms.Label();
+            this.leftPanel = new System.Windows.Forms.Panel();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             this.minBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.clsBtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.leftPanel = new System.Windows.Forms.Panel();
-            this.logout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.transactions = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.logout = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.update = new Bunifu.Framework.UI.BunifuFlatButton();
             this.residents = new Bunifu.Framework.UI.BunifuFlatButton();
             this.programs = new Bunifu.Framework.UI.BunifuFlatButton();
             this.announcements = new Bunifu.Framework.UI.BunifuFlatButton();
             this.profile = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dashboard = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.staffBody.SuspendLayout();
             this.header.SuspendLayout();
             this.leftPanel.SuspendLayout();
@@ -123,15 +124,6 @@
             this.uname.Size = new System.Drawing.Size(0, 19);
             this.uname.TabIndex = 6;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(5, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(46, 55);
-            this.panel1.TabIndex = 5;
-            // 
             // globalLabel
             // 
             this.globalLabel.AutoSize = true;
@@ -142,6 +134,46 @@
             this.globalLabel.Size = new System.Drawing.Size(123, 24);
             this.globalLabel.TabIndex = 4;
             this.globalLabel.Text = "Dashboard";
+            // 
+            // leftPanel
+            // 
+            this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.leftPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.leftPanel.Controls.Add(this.logout);
+            this.leftPanel.Controls.Add(this.transactions);
+            this.leftPanel.Controls.Add(this.update);
+            this.leftPanel.Controls.Add(this.residents);
+            this.leftPanel.Controls.Add(this.programs);
+            this.leftPanel.Controls.Add(this.announcements);
+            this.leftPanel.Controls.Add(this.profile);
+            this.leftPanel.Controls.Add(this.dashboard);
+            this.leftPanel.Controls.Add(this.panel2);
+            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(292, 566);
+            this.leftPanel.TabIndex = 1;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.header;
+            this.bunifuDragControl1.Vertical = true;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 15;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(5, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(46, 55);
+            this.panel1.TabIndex = 5;
             // 
             // minBtn
             // 
@@ -213,23 +245,43 @@
             this.clsBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clsBtn.Click += new System.EventHandler(this.clsBtn_Click);
             // 
-            // leftPanel
+            // transactions
             // 
-            this.leftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.leftPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.leftPanel.Controls.Add(this.logout);
-            this.leftPanel.Controls.Add(this.transactions);
-            this.leftPanel.Controls.Add(this.residents);
-            this.leftPanel.Controls.Add(this.programs);
-            this.leftPanel.Controls.Add(this.announcements);
-            this.leftPanel.Controls.Add(this.profile);
-            this.leftPanel.Controls.Add(this.dashboard);
-            this.leftPanel.Controls.Add(this.panel2);
-            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(292, 566);
-            this.leftPanel.TabIndex = 1;
+            this.transactions.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.transactions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.transactions.BorderRadius = 0;
+            this.transactions.ButtonText = "     Documents";
+            this.transactions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.transactions.DisabledColor = System.Drawing.Color.Gray;
+            this.transactions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.transactions.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactions.Iconcolor = System.Drawing.Color.Transparent;
+            this.transactions.Iconimage = ((System.Drawing.Image)(resources.GetObject("transactions.Iconimage")));
+            this.transactions.Iconimage_right = null;
+            this.transactions.Iconimage_right_Selected = null;
+            this.transactions.Iconimage_Selected = null;
+            this.transactions.IconMarginLeft = 0;
+            this.transactions.IconMarginRight = 0;
+            this.transactions.IconRightVisible = true;
+            this.transactions.IconRightZoom = 0D;
+            this.transactions.IconVisible = true;
+            this.transactions.IconZoom = 60D;
+            this.transactions.IsTab = false;
+            this.transactions.Location = new System.Drawing.Point(0, 371);
+            this.transactions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.transactions.Name = "transactions";
+            this.transactions.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.transactions.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.transactions.OnHoverTextColor = System.Drawing.Color.White;
+            this.transactions.selected = false;
+            this.transactions.Size = new System.Drawing.Size(290, 51);
+            this.transactions.TabIndex = 9;
+            this.transactions.Text = "     Documents";
+            this.transactions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.transactions.Textcolor = System.Drawing.Color.White;
+            this.transactions.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactions.Click += new System.EventHandler(this.transactions_Click);
             // 
             // logout
             // 
@@ -254,7 +306,7 @@
             this.logout.IconVisible = true;
             this.logout.IconZoom = 60D;
             this.logout.IsTab = false;
-            this.logout.Location = new System.Drawing.Point(0, 371);
+            this.logout.Location = new System.Drawing.Point(0, 422);
             this.logout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.logout.Name = "logout";
             this.logout.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -269,43 +321,43 @@
             this.logout.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.Click += new System.EventHandler(this.staffs_Click);
             // 
-            // transactions
+            // update
             // 
-            this.transactions.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.transactions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.transactions.BorderRadius = 0;
-            this.transactions.ButtonText = "     Documents";
-            this.transactions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.transactions.DisabledColor = System.Drawing.Color.Gray;
-            this.transactions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.transactions.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactions.Iconcolor = System.Drawing.Color.Transparent;
-            this.transactions.Iconimage = ((System.Drawing.Image)(resources.GetObject("transactions.Iconimage")));
-            this.transactions.Iconimage_right = null;
-            this.transactions.Iconimage_right_Selected = null;
-            this.transactions.Iconimage_Selected = null;
-            this.transactions.IconMarginLeft = 0;
-            this.transactions.IconMarginRight = 0;
-            this.transactions.IconRightVisible = true;
-            this.transactions.IconRightZoom = 0D;
-            this.transactions.IconVisible = true;
-            this.transactions.IconZoom = 60D;
-            this.transactions.IsTab = false;
-            this.transactions.Location = new System.Drawing.Point(0, 320);
-            this.transactions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.transactions.Name = "transactions";
-            this.transactions.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.transactions.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.transactions.OnHoverTextColor = System.Drawing.Color.White;
-            this.transactions.selected = false;
-            this.transactions.Size = new System.Drawing.Size(290, 51);
-            this.transactions.TabIndex = 9;
-            this.transactions.Text = "     Documents";
-            this.transactions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.transactions.Textcolor = System.Drawing.Color.White;
-            this.transactions.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactions.Click += new System.EventHandler(this.transactions_Click);
+            this.update.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.update.BorderRadius = 0;
+            this.update.ButtonText = "     Update";
+            this.update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.update.DisabledColor = System.Drawing.Color.Gray;
+            this.update.Dock = System.Windows.Forms.DockStyle.Top;
+            this.update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.Iconcolor = System.Drawing.Color.Transparent;
+            this.update.Iconimage = ((System.Drawing.Image)(resources.GetObject("update.Iconimage")));
+            this.update.Iconimage_right = null;
+            this.update.Iconimage_right_Selected = null;
+            this.update.Iconimage_Selected = null;
+            this.update.IconMarginLeft = 0;
+            this.update.IconMarginRight = 0;
+            this.update.IconRightVisible = true;
+            this.update.IconRightZoom = 0D;
+            this.update.IconVisible = true;
+            this.update.IconZoom = 60D;
+            this.update.IsTab = false;
+            this.update.Location = new System.Drawing.Point(0, 320);
+            this.update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.update.Name = "update";
+            this.update.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.update.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.update.OnHoverTextColor = System.Drawing.Color.White;
+            this.update.selected = false;
+            this.update.Size = new System.Drawing.Size(290, 51);
+            this.update.TabIndex = 11;
+            this.update.Text = "     Update";
+            this.update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.update.Textcolor = System.Drawing.Color.White;
+            this.update.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // residents
             // 
@@ -390,9 +442,10 @@
             this.announcements.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.announcements.BorderRadius = 0;
             this.announcements.ButtonText = "     Announcements";
-            this.announcements.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.announcements.DisabledColor = System.Drawing.Color.White;
+            this.announcements.Cursor = System.Windows.Forms.Cursors.No;
+            this.announcements.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.announcements.Dock = System.Windows.Forms.DockStyle.Top;
+            this.announcements.Enabled = false;
             this.announcements.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.announcements.Iconcolor = System.Drawing.Color.Transparent;
             this.announcements.Iconimage = ((System.Drawing.Image)(resources.GetObject("announcements.Iconimage")));
@@ -510,18 +563,6 @@
             this.panel2.Size = new System.Drawing.Size(290, 65);
             this.panel2.TabIndex = 2;
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.header;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 15;
-            this.bunifuElipse1.TargetControl = this;
-            // 
             // StaffMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -551,7 +592,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton transactions;
         private Bunifu.Framework.UI.BunifuFlatButton residents;
         private Bunifu.Framework.UI.BunifuFlatButton programs;
-        private Bunifu.Framework.UI.BunifuFlatButton profile;
         private Bunifu.Framework.UI.BunifuFlatButton dashboard;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel header;
@@ -567,5 +607,7 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuFlatButton profile;
+        private Bunifu.Framework.UI.BunifuFlatButton update;
     }
 }

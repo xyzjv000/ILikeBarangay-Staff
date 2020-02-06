@@ -130,7 +130,7 @@ namespace iliekbarangay
                 Connection con = new Connection();
                 con.Connect();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "select RESIDENT_ID,FAMILY_ID, resident_fingerprint from resident ";
+                cmd.CommandText = "select RESIDENT_ID,FAMILY_ID, resident_fingerprint from resident where resident_fingerprint is not null";
                 cmd.Connection = Connection.con;
                 SqlDataAdapter sd = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -302,6 +302,7 @@ namespace iliekbarangay
             // draw fingerprint sample image.
             DrawPicture(ConvertSampleToBitmap(Sample));
             
+
         }
 
         protected Bitmap ConvertSampleToBitmap(DPFP.Sample Sample)
@@ -385,41 +386,68 @@ namespace iliekbarangay
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            if (photo.Image == null)
-            {
-                MessageBox.Show("Scan fingerprint again");
-            }
-            else
-            {
-                f.Text = fname.ToString();
-                bd.Text = dob.ToString();
-                ag.Text = age.ToString();
-                cn.Text = cnum.ToString();
-                address.Text = add.ToString();
-                gen.Text = gender.ToString();
-                fampos.Text = position.ToString();
-                //   label8.Text = Fid.ToString();
-                //  mamshie.Text = mother.ToString();                              
-                //  papshie.Text = father.ToString();
-                FamilyInfo();
-                label1.Visible = true;
-                label2.Visible = true;
-                label3.Visible = true;
-                label4.Visible = true;
-                label5.Visible = true;
-                label6.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
-                label9.Visible = true;
-                viewBtn.Enabled = false;
-                viewBtn.Visible = false;
-                price.Visible = true;
-                selection.Visible = true;
-                previewBtn.Visible = true;
-            }
+
+            f.Text = fname.ToString();
+            bd.Text = dob.ToString();
+            ag.Text = age.ToString();
+            cn.Text = cnum.ToString();
+            address.Text = add.ToString();
+            gen.Text = gender.ToString();
+            fampos.Text = position.ToString();
+            //   label8.Text = Fid.ToString();
+            //  mamshie.Text = mother.ToString();                              
+            //  papshie.Text = father.ToString();
+            FamilyInfo();
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            label5.Visible = true;
+            label6.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
+            viewBtn.Enabled = false;
+            viewBtn.Visible = false;
+            price.Visible = true;
+            selection.Visible = true;
+            previewBtn.Visible = true;
+
+            //    if (photo.Image == null)
+            //    {
+            //        MessageBox.Show("Scan fingerprint again");
+            //    }
+            //    else
+            //    {
+            //        f.Text = fname.ToString();
+            //        bd.Text = dob.ToString();
+            //        ag.Text = age.ToString();
+            //        cn.Text = cnum.ToString();
+            //        address.Text = add.ToString();
+            //        gen.Text = gender.ToString();
+            //        fampos.Text = position.ToString();
+            //                    //   label8.Text = Fid.ToString();
+            //                    //  mamshie.Text = mother.ToString();                              
+            //                    //  papshie.Text = father.ToString();
+            //        FamilyInfo();
+            //        label1.Visible = true;
+            //        label2.Visible = true;
+            //        label3.Visible = true;
+            //        label4.Visible = true;
+            //        label5.Visible = true;
+            //        label6.Visible = true;
+            //        label7.Visible = true;
+            //        label8.Visible = true;
+            //        label9.Visible = true;
+            //        viewBtn.Enabled = false;
+            //        viewBtn.Visible = false;
+            //        price.Visible = true;
+            //        selection.Visible = true;
+            //        previewBtn.Visible = true;
+            //    }
         }
 
-       
+
         string mother;
         string father;
 
