@@ -64,19 +64,19 @@
             this.mi = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.lname = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.saveBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.save = new Bunifu.Framework.UI.BunifuFlatButton();
             this.profileImage = new System.Windows.Forms.PictureBox();
             this.id = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.saveBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.takePhoto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uploadBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -672,23 +672,6 @@
             this.lname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.lname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lname_KeyPress);
             // 
-            // saveBtn
-            // 
-            this.saveBtn.BackColor = System.Drawing.Color.Transparent;
-            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveBtn.Enabled = false;
-            this.saveBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveBtn.Image")));
-            this.saveBtn.ImageActive = null;
-            this.saveBtn.Location = new System.Drawing.Point(137, 127);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(45, 26);
-            this.saveBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.saveBtn.TabIndex = 24;
-            this.saveBtn.TabStop = false;
-            this.saveBtn.Visible = false;
-            this.saveBtn.Zoom = -10;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
             // save
             // 
             this.save.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
@@ -758,6 +741,23 @@
             this.panel1.Size = new System.Drawing.Size(682, 10);
             this.panel1.TabIndex = 30;
             // 
+            // saveBtn
+            // 
+            this.saveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveBtn.Enabled = false;
+            this.saveBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveBtn.Image")));
+            this.saveBtn.ImageActive = null;
+            this.saveBtn.Location = new System.Drawing.Point(137, 127);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(45, 26);
+            this.saveBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.saveBtn.TabIndex = 24;
+            this.saveBtn.TabStop = false;
+            this.saveBtn.Visible = false;
+            this.saveBtn.Zoom = -10;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // tab_staffProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -778,8 +778,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uploadBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -813,7 +813,6 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox lname;
         private System.Windows.Forms.PictureBox profileImage;
-        private Bunifu.Framework.UI.BunifuImageButton saveBtn;
         private Bunifu.Framework.UI.BunifuFlatButton save;
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.Label label7;
@@ -827,5 +826,6 @@
         private System.Windows.Forms.ComboBox question;
         private MetroFramework.Controls.MetroLink metroLink1;
         private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.UI.BunifuImageButton saveBtn;
     }
 }

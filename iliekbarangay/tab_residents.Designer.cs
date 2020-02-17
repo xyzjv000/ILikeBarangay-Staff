@@ -30,26 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tab_residents));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bckground = new System.Windows.Forms.Panel();
+            this.editBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addResidentBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.identification = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.familyData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.FAMILY_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Household_Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_Registered = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FAMILY_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.residentData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.II = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,21 +51,29 @@
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Civil_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.familyData = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.FAMILY_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Household_Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_Registered = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FAMILY_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addFamily = new Bunifu.Framework.UI.BunifuFlatButton();
             this.searchBox = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.searchBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bckground.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
-            this.metroTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.familyData)).BeginInit();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.residentData)).BeginInit();
+            this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.familyData)).BeginInit();
             this.SuspendLayout();
             // 
             // bckground
             // 
             this.bckground.BackColor = System.Drawing.Color.Gainsboro;
+            this.bckground.Controls.Add(this.editBtn);
             this.bckground.Controls.Add(this.addResidentBtn);
             this.bckground.Controls.Add(this.identification);
             this.bckground.Controls.Add(this.metroTabControl1);
@@ -83,13 +85,51 @@
             this.bckground.Size = new System.Drawing.Size(682, 501);
             this.bckground.TabIndex = 0;
             // 
+            // editBtn
+            // 
+            this.editBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.editBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.editBtn.BorderRadius = 5;
+            this.editBtn.ButtonText = "   Edit";
+            this.editBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.editBtn.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.editBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("editBtn.Iconimage")));
+            this.editBtn.Iconimage_right = null;
+            this.editBtn.Iconimage_right_Selected = null;
+            this.editBtn.Iconimage_Selected = null;
+            this.editBtn.IconMarginLeft = 0;
+            this.editBtn.IconMarginRight = 0;
+            this.editBtn.IconRightVisible = true;
+            this.editBtn.IconRightZoom = 0D;
+            this.editBtn.IconVisible = true;
+            this.editBtn.IconZoom = 50D;
+            this.editBtn.IsTab = false;
+            this.editBtn.Location = new System.Drawing.Point(147, 27);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.editBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
+            this.editBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.editBtn.selected = false;
+            this.editBtn.Size = new System.Drawing.Size(115, 34);
+            this.editBtn.TabIndex = 9;
+            this.editBtn.Text = "   Edit";
+            this.editBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editBtn.Textcolor = System.Drawing.Color.White;
+            this.editBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editBtn.Visible = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
             // addResidentBtn
             // 
             this.addResidentBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
             this.addResidentBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
             this.addResidentBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.addResidentBtn.BorderRadius = 5;
-            this.addResidentBtn.ButtonText = "  Add Family Member";
+            this.addResidentBtn.ButtonText = "Add Member";
             this.addResidentBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addResidentBtn.DisabledColor = System.Drawing.Color.Gray;
             this.addResidentBtn.Font = new System.Drawing.Font("Century Gothic", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,16 +145,16 @@
             this.addResidentBtn.IconVisible = true;
             this.addResidentBtn.IconZoom = 50D;
             this.addResidentBtn.IsTab = false;
-            this.addResidentBtn.Location = new System.Drawing.Point(174, 26);
+            this.addResidentBtn.Location = new System.Drawing.Point(270, 27);
             this.addResidentBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addResidentBtn.Name = "addResidentBtn";
             this.addResidentBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
             this.addResidentBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
             this.addResidentBtn.OnHoverTextColor = System.Drawing.Color.White;
             this.addResidentBtn.selected = false;
-            this.addResidentBtn.Size = new System.Drawing.Size(169, 34);
+            this.addResidentBtn.Size = new System.Drawing.Size(120, 34);
             this.addResidentBtn.TabIndex = 8;
-            this.addResidentBtn.Text = "  Add Family Member";
+            this.addResidentBtn.Text = "Add Member";
             this.addResidentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addResidentBtn.Textcolor = System.Drawing.Color.White;
             this.addResidentBtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,6 +181,135 @@
             this.metroTabControl1.Size = new System.Drawing.Size(643, 408);
             this.metroTabControl1.TabIndex = 6;
             this.metroTabControl1.UseSelectable = true;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.Controls.Add(this.residentData);
+            this.metroTabPage1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroTabPage1.HorizontalScrollbar = true;
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(635, 366);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "                                 Residents                                 ";
+            this.metroTabPage1.VerticalScrollbar = true;
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // residentData
+            // 
+            this.residentData.AllowUserToAddRows = false;
+            this.residentData.AllowUserToDeleteRows = false;
+            this.residentData.AllowUserToResizeColumns = false;
+            this.residentData.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.residentData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.residentData.BackgroundColor = System.Drawing.Color.White;
+            this.residentData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.residentData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.residentData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(181)))), ((int)(((byte)(227)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.residentData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.residentData.ColumnHeadersHeight = 55;
+            this.residentData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.residentData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.II,
+            this.NAME,
+            this.Age,
+            this.Civil_Status,
+            this.Gender});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.residentData.DefaultCellStyle = dataGridViewCellStyle3;
+            this.residentData.DoubleBuffered = true;
+            this.residentData.EnableHeadersVisualStyles = false;
+            this.residentData.GridColor = System.Drawing.Color.White;
+            this.residentData.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.residentData.HeaderForeColor = System.Drawing.Color.White;
+            this.residentData.Location = new System.Drawing.Point(3, 3);
+            this.residentData.MultiSelect = false;
+            this.residentData.Name = "residentData";
+            this.residentData.ReadOnly = true;
+            this.residentData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.residentData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.residentData.RowHeadersVisible = false;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.residentData.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.residentData.RowTemplate.Height = 45;
+            this.residentData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.residentData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.residentData.Size = new System.Drawing.Size(629, 323);
+            this.residentData.TabIndex = 0;
+            this.residentData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.residentData_CellClick);
+            this.residentData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.residentData_CellDoubleClick);
+            this.residentData.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.residentData_ColumnHeaderMouseClick);
+            // 
+            // II
+            // 
+            this.II.DataPropertyName = "II";
+            this.II.HeaderText = "ID";
+            this.II.Name = "II";
+            this.II.ReadOnly = true;
+            this.II.Visible = false;
+            // 
+            // NAME
+            // 
+            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NAME.DataPropertyName = "NAME";
+            this.NAME.HeaderText = "Name";
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            // 
+            // Age
+            // 
+            this.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Age.DataPropertyName = "Age";
+            this.Age.HeaderText = "Age";
+            this.Age.Name = "Age";
+            this.Age.ReadOnly = true;
+            // 
+            // Civil_Status
+            // 
+            this.Civil_Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Civil_Status.DataPropertyName = "Civil_Status";
+            this.Civil_Status.HeaderText = "Civil Status";
+            this.Civil_Status.Name = "Civil_Status";
+            this.Civil_Status.ReadOnly = true;
+            // 
+            // Gender
+            // 
+            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
             // 
             // metroTabPage2
             // 
@@ -264,134 +433,6 @@
             this.FAMILY_ID.ReadOnly = true;
             this.FAMILY_ID.Visible = false;
             // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.Controls.Add(this.residentData);
-            this.metroTabPage1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTabPage1.HorizontalScrollbar = true;
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(635, 366);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "                                 Residents                                 ";
-            this.metroTabPage1.VerticalScrollbar = true;
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // residentData
-            // 
-            this.residentData.AllowUserToAddRows = false;
-            this.residentData.AllowUserToDeleteRows = false;
-            this.residentData.AllowUserToResizeColumns = false;
-            this.residentData.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.residentData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.residentData.BackgroundColor = System.Drawing.Color.White;
-            this.residentData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.residentData.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.residentData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(181)))), ((int)(((byte)(227)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.residentData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.residentData.ColumnHeadersHeight = 55;
-            this.residentData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.residentData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.II,
-            this.NAME,
-            this.Age,
-            this.Civil_Status,
-            this.Gender});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.residentData.DefaultCellStyle = dataGridViewCellStyle3;
-            this.residentData.DoubleBuffered = true;
-            this.residentData.EnableHeadersVisualStyles = false;
-            this.residentData.GridColor = System.Drawing.Color.White;
-            this.residentData.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.residentData.HeaderForeColor = System.Drawing.Color.White;
-            this.residentData.Location = new System.Drawing.Point(3, 3);
-            this.residentData.MultiSelect = false;
-            this.residentData.Name = "residentData";
-            this.residentData.ReadOnly = true;
-            this.residentData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.residentData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.residentData.RowHeadersVisible = false;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.residentData.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.residentData.RowTemplate.Height = 45;
-            this.residentData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.residentData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.residentData.Size = new System.Drawing.Size(629, 323);
-            this.residentData.TabIndex = 0;
-            this.residentData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.residentData_CellClick);
-            this.residentData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.residentData_CellDoubleClick);
-            // 
-            // II
-            // 
-            this.II.DataPropertyName = "II";
-            this.II.HeaderText = "ID";
-            this.II.Name = "II";
-            this.II.ReadOnly = true;
-            this.II.Visible = false;
-            // 
-            // NAME
-            // 
-            this.NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NAME.DataPropertyName = "NAME";
-            this.NAME.HeaderText = "Name";
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            // 
-            // Age
-            // 
-            this.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Age.DataPropertyName = "Age";
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            this.Age.ReadOnly = true;
-            // 
-            // Civil_Status
-            // 
-            this.Civil_Status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Civil_Status.DataPropertyName = "Civil_Status";
-            this.Civil_Status.HeaderText = "Civil Status";
-            this.Civil_Status.Name = "Civil_Status";
-            this.Civil_Status.ReadOnly = true;
-            // 
-            // Gender
-            // 
-            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Gender.DataPropertyName = "Gender";
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            // 
             // addFamily
             // 
             this.addFamily.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
@@ -414,14 +455,14 @@
             this.addFamily.IconVisible = true;
             this.addFamily.IconZoom = 50D;
             this.addFamily.IsTab = false;
-            this.addFamily.Location = new System.Drawing.Point(18, 26);
+            this.addFamily.Location = new System.Drawing.Point(20, 26);
             this.addFamily.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addFamily.Name = "addFamily";
             this.addFamily.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
             this.addFamily.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
             this.addFamily.OnHoverTextColor = System.Drawing.Color.White;
             this.addFamily.selected = false;
-            this.addFamily.Size = new System.Drawing.Size(137, 34);
+            this.addFamily.Size = new System.Drawing.Size(120, 34);
             this.addFamily.TabIndex = 5;
             this.addFamily.Text = "  Add Family";
             this.addFamily.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -439,10 +480,10 @@
             this.searchBox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.searchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.searchBox.isPassword = false;
-            this.searchBox.Location = new System.Drawing.Point(376, 24);
+            this.searchBox.Location = new System.Drawing.Point(397, 27);
             this.searchBox.Margin = new System.Windows.Forms.Padding(4);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(194, 29);
+            this.searchBox.Size = new System.Drawing.Size(180, 29);
             this.searchBox.TabIndex = 4;
             this.searchBox.Text = "Search";
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -471,7 +512,7 @@
             this.searchBtn.IconVisible = true;
             this.searchBtn.IconZoom = 50D;
             this.searchBtn.IsTab = false;
-            this.searchBtn.Location = new System.Drawing.Point(577, 24);
+            this.searchBtn.Location = new System.Drawing.Point(582, 27);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Normalcolor = System.Drawing.Color.DarkGray;
             this.searchBtn.OnHovercolor = System.Drawing.Color.Gray;
@@ -502,10 +543,10 @@
             this.bckground.ResumeLayout(false);
             this.bckground.PerformLayout();
             this.metroTabControl1.ResumeLayout(false);
-            this.metroTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.familyData)).EndInit();
             this.metroTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.residentData)).EndInit();
+            this.metroTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.familyData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -534,5 +575,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_Registered;
         private System.Windows.Forms.DataGridViewTextBoxColumn FAMILY_ID;
         public Bunifu.Framework.UI.BunifuFlatButton addResidentBtn;
+        public Bunifu.Framework.UI.BunifuFlatButton editBtn;
     }
 }

@@ -62,6 +62,8 @@ namespace iliekbarangay
 
             da.Fill(dt);     
             residentData.DataSource = dt;
+            residentData.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
 
             SqlDataAdapter fa = new SqlDataAdapter("select FAMILY_NAME AS Family_Name, CONCAT(FAMILY_ZONE ,' ',FAMILY_STREET ,',', FAMILY_BARANGAY) AS Address,FAMILY_HOUSEHOLD_NUM AS Household_Num, FAMILY_DATE_REGISTERED AS Date_Registered, FAMILY_ID from FAMILY", Connection.con);
             SqlCommandBuilder cf = new SqlCommandBuilder(fa);
@@ -77,6 +79,34 @@ namespace iliekbarangay
             
             this.identification.Text = ID;
 
+        }
+
+        public void DisplayData()
+        {
+            Connection con = new Connection();
+            con.Connect();
+            SqlDataAdapter da = new SqlDataAdapter("select CONCAT(RESIDENT_LNAME,', ',RESIDENT_FNAME,' ',RESIDENT_MNAME) AS NAME,RESIDENT_AGE AS Age,RESIDENT_MARITAL AS Civil_Status, RESIDENT_GENDER AS Gender, RESIDENT_ID AS II from resident where family_id is not null", Connection.con);
+
+            SqlCommandBuilder cd = new SqlCommandBuilder(da);
+            DataTable dt = new DataTable();
+
+
+            da.Fill(dt);
+            residentData.DataSource = dt;
+
+            SqlDataAdapter fa = new SqlDataAdapter("select FAMILY_NAME AS Family_Name, CONCAT(FAMILY_ZONE ,' ',FAMILY_STREET ,',', FAMILY_BARANGAY) AS Address,FAMILY_HOUSEHOLD_NUM AS Household_Num, FAMILY_DATE_REGISTERED AS Date_Registered, FAMILY_ID from FAMILY", Connection.con);
+            SqlCommandBuilder cf = new SqlCommandBuilder(fa);
+            DataTable dx = new DataTable();
+            fa.Fill(dx);
+            familyData.DataSource = dx;
+            familyData.AutoSizeColumnsMode =
+            DataGridViewAutoSizeColumnsMode.Fill;
+
+            var button = new Bunifu.Framework.UI.BunifuFlatButton();
+            button.Click += addFamily_Click; ;
+
+
+            this.identification.Text = ID;
         }
 
 
@@ -316,14 +346,28 @@ namespace iliekbarangay
             }
         }
 
+       
+
         private void familyData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            addResidentBtn.Visible = true;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                addResidentBtn.Visible = true;
+                editBtn.Visible = true;
+                
+            }
+            
         }
 
         private void residentData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            addResidentBtn.Visible = false;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                addResidentBtn.Visible = false;
+                editBtn.Visible = true;
+                
+            }
+            
         }
 
         private void addResidentBtn_Click(object sender, EventArgs e)
@@ -337,6 +381,33 @@ namespace iliekbarangay
             tr.FID = this.familyData.CurrentRow.Cells[4].Value.ToString();
             tr.Dock = DockStyle.Fill;
             tr.Show();
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            
+            if(metroTabControl1.SelectedTab == metroTabPage1)
+            {
+                EditResident er = new EditResident();
+                this.Controls.Add(er);
+                er.ID = ID.Trim();
+                er.RID = this.residentData.CurrentRow.Cells[4].Value.ToString();
+                er.DisplayID();
+                er.DisplayData();
+                er.Dock = DockStyle.Fill;
+                er.Show();
+            }
+            else if (metroTabControl1.SelectedTab == metroTabPage2)
+            {
+
+            }
+            
+        }
+
+        private void residentData_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DisplayData();
         }
     }
 }

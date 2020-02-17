@@ -130,7 +130,7 @@ namespace iliekbarangay
                 string healthStat = "";
                 string healthProb = "";
                 string vaccine = "";
-                if (fname.Text == "" || lname.Text == "" || YrLvl.Text == "" || skill.Text == "")
+                if (fname.Text == "" || lname.Text == "")
                 {
                     MessageBox.Show("Please fill up all forms");
                 }
@@ -212,9 +212,9 @@ namespace iliekbarangay
                                 MessageBox.Show("Initials should be 1 character!");
                                 mi.Focus();
                             }
-                            else if (DOB.Value >= DateTime.Now.AddYears(-2))
+                            else if (DOB.Value >= DateTime.Now)
                             {
-                                MessageBox.Show("System is available only for 3 years old and above!");
+                                MessageBox.Show("Check your Date of Birth!");
                             }
                             else if (healthStatus.CheckedItems.Count >= 2)
                             {

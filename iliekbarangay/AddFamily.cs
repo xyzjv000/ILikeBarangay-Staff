@@ -80,17 +80,17 @@ namespace iliekbarangay
            
            
             
-            if (familyName.Text == "" || houseHoldNum.Text == "" || Purok.Text =="" || Barangay.Text == "" || City.Text == "" ||  home == "" || residentStat == "" || lotype == "" || lengthOR == "" || waterS == "" ||waterC == "" ||garbase == "" || cr =="")
-            {
-                MessageBox.Show("Please dont leave empty spaces");
-            }
-            else
-            {
+            //if (familyName.Text == "" || houseHoldNum.Text == "" || Purok.Text =="" || Barangay.Text == "" || City.Text == "" ||  home == "" || residentStat == "" || lotype == "" || lengthOR == "" || waterS == "" ||waterC == "" ||garbase == "" || cr =="")
+            //{
+            //    MessageBox.Show("Please dont leave empty spaces");
+            //}
+            //if
+            //{
                 string fac ="";
                 try
                 {
-                    if (facility.CheckedItems.Count > 0)
-                    {
+                    //if (facility.CheckedItems.Count > 0)
+                    //{
                         for (int i = 0; i < facility.CheckedItems.Count; i++)
                         {
                             if (fac == "")
@@ -161,18 +161,18 @@ namespace iliekbarangay
                             Reset();
                             
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("You should select facilities around your area");
-                    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("You should select facilities around your area");
+                    //}
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message + ex.ToString());
                 }
 
-            }
+            //}
            
 
 
@@ -260,7 +260,7 @@ namespace iliekbarangay
                 string healthStat = "";
                 string healthProb = "";
                 string vaccine = "";
-                if (fname.Text == "" || lname.Text == "" || YrLvl.Text == "" || skill.Text == "")
+                if (fname.Text == "" || lname.Text == "")
                 {
                     MessageBox.Show("Please fill up all forms");
                 }
@@ -351,10 +351,10 @@ namespace iliekbarangay
                                 MessageBox.Show("Only choose 3 health problems!");
                                 healthProblems.Focus();
                             }
-                            else if (DOB.Value >= DateTime.Now.AddYears(-2))
-                            {
-                                MessageBox.Show("System is available only for 3 years old and above!");
-                            }
+                            //else if (DOB.Value >= DateTime.Now.AddYears(-2))
+                            //{
+                            //    MessageBox.Show("System is available only for 3 years old and above!");
+                            //}
                             else if (DOB.Value > DateTime.Now)
                             {
                                 MessageBox.Show("Date must be in the past!");

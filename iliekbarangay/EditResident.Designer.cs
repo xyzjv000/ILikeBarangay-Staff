@@ -1,6 +1,6 @@
 ﻿namespace iliekbarangay
 {
-    partial class addResident
+    partial class EditResident
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addResident));
-            this.addbody = new System.Windows.Forms.Panel();
-            this.identification = new System.Windows.Forms.Label();
-            this.FMPI = new System.Windows.Forms.Panel();
-            this.prompts = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditResident));
             this.scans = new System.Windows.Forms.Label();
             this.StatusLine = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -47,7 +43,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.clearBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.saveResBtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.fingerSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label21 = new System.Windows.Forms.Label();
             this.familyPos = new System.Windows.Forms.ComboBox();
             this.vaccineTaken = new System.Windows.Forms.CheckedListBox();
@@ -57,8 +52,13 @@
             this.healthProblems = new System.Windows.Forms.CheckedListBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.monthlyIncome = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.jobType = new System.Windows.Forms.ComboBox();
+            this.addbody = new System.Windows.Forms.Panel();
+            this.identification = new System.Windows.Forms.Label();
+            this.FMPI = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.sourceOfFund = new System.Windows.Forms.ComboBox();
@@ -83,112 +83,12 @@
             this.lname = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.fname = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label5 = new System.Windows.Forms.Label();
-            this.fingerPrint1 = new System.Windows.Forms.PictureBox();
             this.openCamera = new Bunifu.Framework.UI.BunifuFlatButton();
             this.takePhotoBtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.addbody.SuspendLayout();
             this.FMPI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.res_Image)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fingerPrint1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // addbody
-            // 
-            this.addbody.AutoScroll = true;
-            this.addbody.Controls.Add(this.identification);
-            this.addbody.Controls.Add(this.FMPI);
-            this.addbody.Controls.Add(this.label1);
-            this.addbody.Location = new System.Drawing.Point(0, 0);
-            this.addbody.Name = "addbody";
-            this.addbody.Size = new System.Drawing.Size(679, 997);
-            this.addbody.TabIndex = 0;
-            // 
-            // identification
-            // 
-            this.identification.AutoSize = true;
-            this.identification.Location = new System.Drawing.Point(16, 20);
-            this.identification.Name = "identification";
-            this.identification.Size = new System.Drawing.Size(97, 13);
-            this.identification.TabIndex = 10;
-            this.identification.Text = "ggggggggggggggg";
-            this.identification.Visible = false;
-            // 
-            // FMPI
-            // 
-            this.FMPI.BackColor = System.Drawing.Color.White;
-            this.FMPI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.FMPI.Controls.Add(this.prompts);
-            this.FMPI.Controls.Add(this.scans);
-            this.FMPI.Controls.Add(this.StatusLine);
-            this.FMPI.Controls.Add(this.label30);
-            this.FMPI.Controls.Add(this.familyHead);
-            this.FMPI.Controls.Add(this.label29);
-            this.FMPI.Controls.Add(this.label28);
-            this.FMPI.Controls.Add(this.label27);
-            this.FMPI.Controls.Add(this.label26);
-            this.FMPI.Controls.Add(this.label25);
-            this.FMPI.Controls.Add(this.label24);
-            this.FMPI.Controls.Add(this.label23);
-            this.FMPI.Controls.Add(this.clearBtn);
-            this.FMPI.Controls.Add(this.saveResBtn);
-            this.FMPI.Controls.Add(this.fingerSave);
-            this.FMPI.Controls.Add(this.label21);
-            this.FMPI.Controls.Add(this.familyPos);
-            this.FMPI.Controls.Add(this.vaccineTaken);
-            this.FMPI.Controls.Add(this.label20);
-            this.FMPI.Controls.Add(this.healthStatus);
-            this.FMPI.Controls.Add(this.healthStatusLabel);
-            this.FMPI.Controls.Add(this.healthProblems);
-            this.FMPI.Controls.Add(this.label18);
-            this.FMPI.Controls.Add(this.label17);
-            this.FMPI.Controls.Add(this.monthlyIncome);
-            this.FMPI.Controls.Add(this.jobType);
-            this.FMPI.Controls.Add(this.label16);
-            this.FMPI.Controls.Add(this.label15);
-            this.FMPI.Controls.Add(this.sourceOfFund);
-            this.FMPI.Controls.Add(this.skill);
-            this.FMPI.Controls.Add(this.label14);
-            this.FMPI.Controls.Add(this.label13);
-            this.FMPI.Controls.Add(this.eduLvl);
-            this.FMPI.Controls.Add(this.eduStat);
-            this.FMPI.Controls.Add(this.YrLvl);
-            this.FMPI.Controls.Add(this.label12);
-            this.FMPI.Controls.Add(this.cnum);
-            this.FMPI.Controls.Add(this.civilRegStat);
-            this.FMPI.Controls.Add(this.label11);
-            this.FMPI.Controls.Add(this.label10);
-            this.FMPI.Controls.Add(this.maritalStatus);
-            this.FMPI.Controls.Add(this.DOB);
-            this.FMPI.Controls.Add(this.label9);
-            this.FMPI.Controls.Add(this.label8);
-            this.FMPI.Controls.Add(this.gender);
-            this.FMPI.Controls.Add(this.res_Image);
-            this.FMPI.Controls.Add(this.mi);
-            this.FMPI.Controls.Add(this.lname);
-            this.FMPI.Controls.Add(this.fname);
-            this.FMPI.Controls.Add(this.label5);
-            this.FMPI.Controls.Add(this.fingerPrint1);
-            this.FMPI.Controls.Add(this.openCamera);
-            this.FMPI.Controls.Add(this.takePhotoBtn);
-            this.FMPI.Location = new System.Drawing.Point(19, 62);
-            this.FMPI.Name = "FMPI";
-            this.FMPI.Size = new System.Drawing.Size(634, 918);
-            this.FMPI.TabIndex = 9;
-            // 
-            // prompts
-            // 
-            this.prompts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prompts.AutoSize = true;
-            this.prompts.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prompts.Location = new System.Drawing.Point(431, 633);
-            this.prompts.Name = "prompts";
-            this.prompts.Size = new System.Drawing.Size(143, 16);
-            this.prompts.TabIndex = 62;
-            this.prompts.Text = "Click \"Fingerprint\" to scan.";
             // 
             // scans
             // 
@@ -389,43 +289,6 @@
             this.saveResBtn.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveResBtn.Click += new System.EventHandler(this.saveResBtn_Click);
             // 
-            // fingerSave
-            // 
-            this.fingerSave.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.fingerSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.fingerSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fingerSave.BorderRadius = 5;
-            this.fingerSave.ButtonText = "  Fingerprint";
-            this.fingerSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fingerSave.DisabledColor = System.Drawing.Color.Gray;
-            this.fingerSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fingerSave.Iconcolor = System.Drawing.Color.Transparent;
-            this.fingerSave.Iconimage = ((System.Drawing.Image)(resources.GetObject("fingerSave.Iconimage")));
-            this.fingerSave.Iconimage_right = null;
-            this.fingerSave.Iconimage_right_Selected = null;
-            this.fingerSave.Iconimage_Selected = null;
-            this.fingerSave.IconMarginLeft = 20;
-            this.fingerSave.IconMarginRight = 0;
-            this.fingerSave.IconRightVisible = true;
-            this.fingerSave.IconRightZoom = 0D;
-            this.fingerSave.IconVisible = true;
-            this.fingerSave.IconZoom = 50D;
-            this.fingerSave.IsTab = false;
-            this.fingerSave.Location = new System.Drawing.Point(434, 824);
-            this.fingerSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.fingerSave.Name = "fingerSave";
-            this.fingerSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.fingerSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(145)))), ((int)(((byte)(213)))));
-            this.fingerSave.OnHoverTextColor = System.Drawing.Color.White;
-            this.fingerSave.selected = false;
-            this.fingerSave.Size = new System.Drawing.Size(170, 33);
-            this.fingerSave.TabIndex = 27;
-            this.fingerSave.Text = "  Fingerprint";
-            this.fingerSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fingerSave.Textcolor = System.Drawing.Color.White;
-            this.fingerSave.TextFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fingerSave.Click += new System.EventHandler(this.fingerSave_Click);
-            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -505,7 +368,7 @@
             "None"});
             this.healthStatus.Location = new System.Drawing.Point(309, 468);
             this.healthStatus.Name = "healthStatus";
-            this.healthStatus.Size = new System.Drawing.Size(260, 144);
+            this.healthStatus.Size = new System.Drawing.Size(260, 162);
             this.healthStatus.TabIndex = 25;
             // 
             // healthStatusLabel
@@ -580,6 +443,16 @@
             this.monthlyIncome.Size = new System.Drawing.Size(115, 28);
             this.monthlyIncome.TabIndex = 23;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(130, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(414, 33);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Updating Resident Information";
+            // 
             // jobType
             // 
             this.jobType.BackColor = System.Drawing.Color.White;
@@ -594,6 +467,87 @@
             this.jobType.Name = "jobType";
             this.jobType.Size = new System.Drawing.Size(115, 28);
             this.jobType.TabIndex = 22;
+            // 
+            // addbody
+            // 
+            this.addbody.AutoScroll = true;
+            this.addbody.Controls.Add(this.identification);
+            this.addbody.Controls.Add(this.FMPI);
+            this.addbody.Controls.Add(this.label1);
+            this.addbody.Location = new System.Drawing.Point(2, 7);
+            this.addbody.Name = "addbody";
+            this.addbody.Size = new System.Drawing.Size(679, 997);
+            this.addbody.TabIndex = 1;
+            // 
+            // identification
+            // 
+            this.identification.AutoSize = true;
+            this.identification.Location = new System.Drawing.Point(16, 20);
+            this.identification.Name = "identification";
+            this.identification.Size = new System.Drawing.Size(19, 13);
+            this.identification.TabIndex = 10;
+            this.identification.Text = "gg";
+            this.identification.Visible = false;
+            // 
+            // FMPI
+            // 
+            this.FMPI.BackColor = System.Drawing.Color.White;
+            this.FMPI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.FMPI.Controls.Add(this.scans);
+            this.FMPI.Controls.Add(this.StatusLine);
+            this.FMPI.Controls.Add(this.label30);
+            this.FMPI.Controls.Add(this.familyHead);
+            this.FMPI.Controls.Add(this.label29);
+            this.FMPI.Controls.Add(this.label28);
+            this.FMPI.Controls.Add(this.label27);
+            this.FMPI.Controls.Add(this.label26);
+            this.FMPI.Controls.Add(this.label25);
+            this.FMPI.Controls.Add(this.label24);
+            this.FMPI.Controls.Add(this.label23);
+            this.FMPI.Controls.Add(this.clearBtn);
+            this.FMPI.Controls.Add(this.saveResBtn);
+            this.FMPI.Controls.Add(this.label21);
+            this.FMPI.Controls.Add(this.familyPos);
+            this.FMPI.Controls.Add(this.vaccineTaken);
+            this.FMPI.Controls.Add(this.label20);
+            this.FMPI.Controls.Add(this.healthStatus);
+            this.FMPI.Controls.Add(this.healthStatusLabel);
+            this.FMPI.Controls.Add(this.healthProblems);
+            this.FMPI.Controls.Add(this.label18);
+            this.FMPI.Controls.Add(this.label17);
+            this.FMPI.Controls.Add(this.monthlyIncome);
+            this.FMPI.Controls.Add(this.jobType);
+            this.FMPI.Controls.Add(this.label16);
+            this.FMPI.Controls.Add(this.label15);
+            this.FMPI.Controls.Add(this.sourceOfFund);
+            this.FMPI.Controls.Add(this.skill);
+            this.FMPI.Controls.Add(this.label14);
+            this.FMPI.Controls.Add(this.label13);
+            this.FMPI.Controls.Add(this.eduLvl);
+            this.FMPI.Controls.Add(this.eduStat);
+            this.FMPI.Controls.Add(this.YrLvl);
+            this.FMPI.Controls.Add(this.label12);
+            this.FMPI.Controls.Add(this.cnum);
+            this.FMPI.Controls.Add(this.civilRegStat);
+            this.FMPI.Controls.Add(this.label11);
+            this.FMPI.Controls.Add(this.label10);
+            this.FMPI.Controls.Add(this.maritalStatus);
+            this.FMPI.Controls.Add(this.DOB);
+            this.FMPI.Controls.Add(this.label9);
+            this.FMPI.Controls.Add(this.label8);
+            this.FMPI.Controls.Add(this.gender);
+            this.FMPI.Controls.Add(this.res_Image);
+            this.FMPI.Controls.Add(this.mi);
+            this.FMPI.Controls.Add(this.lname);
+            this.FMPI.Controls.Add(this.fname);
+            this.FMPI.Controls.Add(this.label5);
+            this.FMPI.Controls.Add(this.openCamera);
+            this.FMPI.Controls.Add(this.takePhotoBtn);
+            this.FMPI.Location = new System.Drawing.Point(19, 62);
+            this.FMPI.Name = "FMPI";
+            this.FMPI.Size = new System.Drawing.Size(634, 918);
+            this.FMPI.TabIndex = 9;
+            this.FMPI.Paint += new System.Windows.Forms.PaintEventHandler(this.FMPI_Paint);
             // 
             // label16
             // 
@@ -926,16 +880,6 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Family Member\'s Personal Information";
             // 
-            // fingerPrint1
-            // 
-            this.fingerPrint1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fingerPrint1.Location = new System.Drawing.Point(434, 651);
-            this.fingerPrint1.Name = "fingerPrint1";
-            this.fingerPrint1.Size = new System.Drawing.Size(170, 169);
-            this.fingerPrint1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.fingerPrint1.TabIndex = 59;
-            this.fingerPrint1.TabStop = false;
-            // 
             // openCamera
             // 
             this.openCamera.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
@@ -1011,44 +955,26 @@
             this.takePhotoBtn.Visible = false;
             this.takePhotoBtn.Click += new System.EventHandler(this.takePhotoBtn_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(177, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(323, 33);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Adding Family Member";
-            // 
-            // addResident
+            // EditResident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.Controls.Add(this.addbody);
-            this.MinimumSize = new System.Drawing.Size(682, 501);
-            this.Name = "addResident";
+            this.Name = "EditResident";
             this.Size = new System.Drawing.Size(682, 1011);
             this.addbody.ResumeLayout(false);
             this.addbody.PerformLayout();
             this.FMPI.ResumeLayout(false);
             this.FMPI.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.res_Image)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fingerPrint1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel addbody;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel FMPI;
-        private System.Windows.Forms.Label prompts;
         private System.Windows.Forms.Label scans;
         private System.Windows.Forms.Label StatusLine;
-        private Bunifu.Framework.UI.BunifuFlatButton openCamera;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox familyHead;
         private System.Windows.Forms.Label label29;
@@ -1060,7 +986,6 @@
         private System.Windows.Forms.Label label23;
         private Bunifu.Framework.UI.BunifuFlatButton clearBtn;
         private Bunifu.Framework.UI.BunifuFlatButton saveResBtn;
-        private Bunifu.Framework.UI.BunifuFlatButton fingerSave;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox familyPos;
         private System.Windows.Forms.CheckedListBox vaccineTaken;
@@ -1070,8 +995,12 @@
         private System.Windows.Forms.CheckedListBox healthProblems;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox monthlyIncome;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox jobType;
+        private System.Windows.Forms.Panel addbody;
+        private System.Windows.Forms.Panel FMPI;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox sourceOfFund;
@@ -1082,7 +1011,6 @@
         private System.Windows.Forms.ComboBox eduStat;
         private Bunifu.Framework.UI.BunifuMetroTextbox YrLvl;
         private System.Windows.Forms.Label label12;
-        private Bunifu.Framework.UI.BunifuFlatButton takePhotoBtn;
         private Bunifu.Framework.UI.BunifuMetroTextbox cnum;
         private System.Windows.Forms.ComboBox civilRegStat;
         private System.Windows.Forms.Label label11;
@@ -1097,8 +1025,8 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox lname;
         private Bunifu.Framework.UI.BunifuMetroTextbox fname;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox fingerPrint1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label identification;
+        private Bunifu.Framework.UI.BunifuFlatButton openCamera;
+        private Bunifu.Framework.UI.BunifuFlatButton takePhotoBtn;
+        public System.Windows.Forms.Label identification;
     }
 }

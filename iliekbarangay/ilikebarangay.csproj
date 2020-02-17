@@ -136,11 +136,23 @@
     <Compile Include="Documents\BusinessPermit.Designer.cs">
       <DependentUpon>BusinessPermit.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditResident.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditResident.Designer.cs">
+      <DependentUpon>EditResident.cs</DependentUpon>
+    </Compile>
     <Compile Include="FamliyProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FamliyProfile.Designer.cs">
       <DependentUpon>FamliyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FingerUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FingerUpdate.Designer.cs">
+      <DependentUpon>FingerUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.cs">
       <SubType>Form</SubType>
@@ -154,6 +166,12 @@
     </Compile>
     <Compile Include="NewPasswordForm.Designer.cs">
       <DependentUpon>NewPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoUpdate.Designer.cs">
+      <DependentUpon>PhotoUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="PrinterSelectionDialog.cs" />
     <Compile Include="ProgramsCreation.cs">
@@ -248,6 +266,12 @@
     <Compile Include="tab_staffs.Designer.cs">
       <DependentUpon>tab_staffs.cs</DependentUpon>
     </Compile>
+    <Compile Include="tab_update.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tab_update.Designer.cs">
+      <DependentUpon>tab_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transactions.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,8 +293,14 @@
     <EmbeddedResource Include="Documents\BusinessPermit.resx">
       <DependentUpon>BusinessPermit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditResident.resx">
+      <DependentUpon>EditResident.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FamliyProfile.resx">
       <DependentUpon>FamliyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FingerUpdate.resx">
+      <DependentUpon>FingerUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassword.resx">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
@@ -289,6 +319,9 @@
     <EmbeddedResource Include="obj\Debug\iliekbarangay.tab_programs.resources" />
     <EmbeddedResource Include="obj\Debug\iliekbarangay.tab_residents.resources" />
     <EmbeddedResource Include="obj\Debug\iliekbarangay.tab_staffs.resources" />
+    <EmbeddedResource Include="PhotoUpdate.resx">
+      <DependentUpon>PhotoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProgramsCreation.resx">
       <DependentUpon>ProgramsCreation.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="tab_staffs.resx">
       <DependentUpon>tab_staffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tab_update.resx">
+      <DependentUpon>tab_update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions.resx">
       <DependentUpon>Transactions.cs</DependentUpon>
